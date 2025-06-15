@@ -12,7 +12,7 @@ This project applies **Graph Neural Networks (HinSAGE)** in combination with **t
 ├── FusionHinSAGE.ipynb       # Main notebook for training and evaluation
 ├── requirements.txt          # Python package dependencies
 ├── kaggle_data/              # Folder to store the Kaggle dataset
-│   └── fraudTrain.csv
+│   └── credit_card_transactions-ibm_v2.csv
 └── README.md                 # This file
 ```
 
@@ -35,13 +35,13 @@ pip install -r requirements.txt
 
 Download the dataset manually from Kaggle:
 
-📎 [Kaggle - Fraud Detection Dataset](https://www.kaggle.com/datasets/kartik2112/fraud-detection)
+📎 [Kaggle - Fraud Detection Dataset](https://www.kaggle.com/datasets/ealtman2019/credit-card-transactions)
 
-Save the file `fraudTrain.csv` into a folder named `kaggle_data/`, like so:
+Save the file `credit_card_transactions-ibm_v2.csv` into a folder named `kaggle_data/`, like so:
 
 ```
 kaggle_data/
-└── fraudTrain.csv
+└── credit_card_transactions-ibm_v2.csv
 ```
 
 ---
@@ -62,7 +62,7 @@ Inside the notebook:
 - Applies **PCA** on embeddings
 - Fuses embeddings with tabular data
 - Trains **XGBoost** classifiers
-- Evaluates using **Precision**, **Recall**, **F1-score**, and **Confusion Matrix**
+- Evaluates using **Precision**, **Recall**, **F1-score**, **AUC**, and **Confusion Matrix**
 
 ---
 
@@ -70,24 +70,16 @@ Inside the notebook:
 
 - **HinSAGE + Tabular Fusion** improves recall and F1-score over using tabular features alone.
 - PCA was necessary to reduce the impact of 32-dimensional embeddings.
-- Best performance achieved with **PCA dimension = 2**.
+- Best performance achieved with **PCA dimension = 4**.
 
----
-
-## 📌 Example Result
-
-| Model                  | Precision | Recall | F1-score |
-|------------------------|-----------|--------|----------|
-| Tabular only           | 0.96      | 0.66   | 0.78     |
-| HinSAGE + Tabular      | 0.98      | 0.72   | 0.83     |
 
 ---
 
 ## 📎 Notes
 
-- Total transactions: **139,998**
-- Unique clients: **4,069**
-- Unique merchants: **34,386**
+- Total transactions: **698,941**
+- Unique clients: **4,081**
+- Unique merchants: **67,873**
 - Graph is undirected and has no self-loops.
 
 ---
