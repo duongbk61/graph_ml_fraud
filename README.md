@@ -20,6 +20,7 @@ This project applies **Graph Neural Networks (HinSAGE)** in combination with **t
 
 ## ⚙️ Step 1: Install Dependencies
 
+Using Python version 3.8.10
 Before running the notebook, install required Python packages:
 
 ```bash
